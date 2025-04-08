@@ -77,11 +77,11 @@ The framework separates concerns with packages like `base`, `utils`, `retry`, an
 
 ### Lambda Test Execution Results
 
-![img.png](img.png)
+![img_4.png](img_4.png)
 
 ### Allure Report
 
-![img_1.png](img_1.png)
+![img_3.png](img_3.png)
 
 
 -------------
