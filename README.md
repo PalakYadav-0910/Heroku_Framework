@@ -10,29 +10,7 @@ This is a Selenium Java TestNG framework designed to automate login functionalit
 
 ## Project Structure
 
-heroku-login-framework
-├── pom.xml
-├── README.md
-├── src/
-│   ├── main/
-│   │   └── java/
-│   │       └── utils/
-│   │           └── ConfigReader.java
-│   └── test/
-│       └── java/
-│           ├── base/
-│           │   └── BaseTest.java
-│           ├── retry/
-│           │   └── RetryAnalyzer.java
-│           └── tests/
-│               └── LoginTest.java
-                └── JavaScriptAlertTest.java
-│   └── test/
-│       └── resources/
-            ├── AllureReport/
-│           │   └── allure.properties
-│           ├── Suites/
-│           │   └── testng.xml
+![img_2.png](img_2.png)
 
 ```
 heroku-login-framework/
@@ -95,6 +73,16 @@ Allure is used to generate attractive and structured test reports. It integrates
 The framework separates concerns with packages like `base`, `utils`, `retry`, and `tests`, allowing for easy expansion in future (like adding Page Object Model).
 
 
+------------
+
+### Lambda Test Execution Results
+
+![img.png](img.png)
+
+### Allure Report
+
+![img_1.png](img_1.png)
+
 
 -------------
 
@@ -105,6 +93,7 @@ The framework separates concerns with packages like `base`, `utils`, `retry`, an
 mvn test
 ```
 
+
 ### Run on LambdaTest
 Just ensure `LT_USERNAME` and `LT_ACCESS_KEY` are set correctly. Framework will auto-use RemoteWebDriver.
 
@@ -112,13 +101,3 @@ Just ensure `LT_USERNAME` and `LT_ACCESS_KEY` are set correctly. Framework will 
 
 ```bash
 mvn allure:serve
-
-----------------
-
-### Lambda Test Execution Results
-
-![img.png](img.png)
-
-### Allure Report
-
-![img_1.png](img_1.png)
