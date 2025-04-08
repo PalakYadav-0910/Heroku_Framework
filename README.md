@@ -77,6 +77,8 @@ The framework separates concerns with packages like `base`, `utils`, `retry`, an
 
 ### Lambda Test Execution Results
 
+**Test Id Url-** https://automation.lambdatest.com/test?build=49620289&selectedTab=home&testID=NKBXN-E3RA1-ET8YB-AVBJ0&commandType=all
+
 ![img_4.png](img_4.png)
 
 ### Allure Report
