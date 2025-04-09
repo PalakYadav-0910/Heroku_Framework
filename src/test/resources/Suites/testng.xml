@@ -2,6 +2,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="3" name="HerokuSuite" parallel="tests">
 
+    <listeners>
+        <listener class-name="listeners.TestListener"/>
+    </listeners>
+
     <test name="WIN8TEST">
         <parameter name="browser" value="firefox"/>
         <parameter name="version" value="62.0"/>

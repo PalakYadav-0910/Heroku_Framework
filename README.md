@@ -10,21 +10,30 @@ This is a Selenium Java TestNG framework designed to automate login functionalit
 
 ## Project Structure
 
-![img_2.png](img_2.png)
+![img_6.png](img_6.png)
 
 ```
 heroku-login-framework/
 ├── pom.xml                                     # Maven project file            
 ├── src/
-│   ├── main/java/utils/ConfigReader.java       # Reads credentials from env vars
+│   ├── main/java
 │   └── test/java/
 │       ├── base/BaseTest.java                  # Common WebDriver setup
+│       ├── listeners/TestListener.java         # TestListener
+│       ├── pageObject/LoginPage.java           # Pages for Page Object Model
 │       ├── retry/RetryAnalyzer.java            # Retry logic for failed tests
 │       └── tests/
                └── LoginTest.java               # Valid and invalid login tests
                └── JavaScriptAlertTest          # Handle JS Alerts
+        └── utils/
+              └── ConfigReader.java             # Reads credentials from env vars
+              └── ScreenshotUtil.java           # For taking screenshot of failed test cases
      └── test/resources/
 │       ├── AllureReport/allure.properties      # Allure configuration
+│       ├── Logging
+│              └── logs                         # Folder for storing logs
+│              └── log4j2.xml                   # Configuration for logging
+│       ├── Screenshots                         # Folder for storing screenshots
 │       ├── Suites/testng.xml                   # TestNG suite file
 
 
@@ -44,12 +53,16 @@ Add following plugins in pom.xml
 - maven-surefire-plugin
 
 ## Key Features
+
+- Automates login functionality using Selenium and TestNG
 - Secure credential management using **environment variables** (no hardcoded secrets)
 - **Parallel execution** using TestNG configuration
 - **Retry logic** for failed tests
 - **Allure reporting** for beautiful test result visualization
 - **LambdaTest integration** with **session ID logging** for easy traceability
-
+- Page Object Model with PageFactory
+- Screenshots captured for failed tests
+- Logging using Log4j2
 
 
 ------------
@@ -72,6 +85,11 @@ Allure is used to generate attractive and structured test reports. It integrates
 ### 5. **Scalable Test Structure**
 The framework separates concerns with packages like `base`, `utils`, `retry`, and `tests`, allowing for easy expansion in future (like adding Page Object Model).
 
+### 6. **Log4j for Logging**
+Log4j2 used for centralized logging
+
+### 7. **Screenshots on Test Failure**
+Screenshots on failure help debugging
 
 ------------
 
@@ -85,16 +103,13 @@ The framework separates concerns with packages like `base`, `utils`, `retry`, an
 
 ![img_3.png](img_3.png)
 
-
 -------------
-
 
 ### Run Tests Locally
 
 ```bash
 mvn test
 ```
-
 
 ### Run on LambdaTest
 Just ensure `LT_USERNAME` and `LT_ACCESS_KEY` are set correctly. Framework will auto-use RemoteWebDriver.
