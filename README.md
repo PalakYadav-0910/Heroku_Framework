@@ -46,11 +46,14 @@ Add following dependencies in pom.xml
 - testng
 - webdrivermanager
 - allure-testng
+- log4j-api
+- log4j-core
 
 Add following plugins in pom.xml
 
 - maven-compiler-plugin
 - maven-surefire-plugin
+- allure-maven
 
 ## Key Features
 
